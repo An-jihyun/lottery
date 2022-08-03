@@ -1,0 +1,19 @@
+@import "./reset.css";
+#namelist {
+  text-align: center;
+}
+/*
+body {
+  background-color: burlywood;
+}
+
+main {
+  background-color: bisque;
+}
+/*a*/
+@media (max-width: 1023px) {
+/*b*/
+}
+@media (max-width: 768px) {
+/*c*/
+}

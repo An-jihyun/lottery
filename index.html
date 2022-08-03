@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="kr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./index.css" />
+    <title>고기는 누가 살 것인가</title>
+  </head>
+  <body>
+    <main>
+      <h1>고기는 누가 살 것인가</h1>
+      <form id="nameAddForm">
+        <input id="nameAddInput" placeholder="이름을 입력해주세요." type="text" maxlength="5" />
+        <button type="submit">확인</button>
+      </form>
+      <ul id="nameUl"></ul>
+      <button type="button" id="resetBtn">다시하기</button>
+      <button type="button" id="lotteryBtn">추첨하기</button>
+      <p>
+        플렉스 주인공 :
+        <span id="countDown"></span>
+        <span id="result"></span>
+      </p>
+      <form id="lotteryNumForm">
+        <input
+          id="lotteryNumInput"
+          placeholder="추첨수를 입력해주세요."
+          type="text"
+          maxlength="5"
+        />
+        <button id="lotteryNumBtn" type="button">확인</button>
+      </form>
+    </main>
+    <script src="./index.js"></script>
+  </body>
+</html>
