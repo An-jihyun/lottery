@@ -18,7 +18,9 @@ const saveUser = (username) => {
 
 const addName = (username) => {
   const nameLi = document.createElement("li");
-  nameLi.textContent = username;
+  const usernameSpan = document.createElement("span");
+  usernameSpan.textContent = username;
+  nameLi.appendChild(usernameSpan);
   const deleteUserBtn = document.createElement("button"); //또 선언 말고 없는지
   deleteUserBtn.textContent = "❌";
   deleteUserBtn.addEventListener("click", deleteUser, false);
@@ -42,18 +44,16 @@ const handleNameAddFormSubmit = (e) => {
 };
 
 const deleteUser = (e) => {
-  const item = e.target.closest("li");
-  const localItem = item.getItem;
-  const deleteItem = userArr.filter((v) => v !== localItem);
-  console.log(deleteItem);
-  // if (deleteItem) {
-  //   // localStorage.setItem(USERARR_KEY, JSON.stringify(deleteItem));
-  // }
-  item.remove();
+  const clickedItem = e.target.closest("li");
+  const targetUsername = clickedItem.querySelector("span").textContent;
+  const filtered = userArr.filter((v) => v !== targetUsername);
+
+  localStorage.setItem(USERARR_KEY, JSON.stringify(filtered));
+  clickedItem.remove();
 };
 //데이터 삭제시엔 removeItem 사용
 
-const count = (e) => {
+const count = () => {
   let countNum = 5;
   const timerId = setInterval(() => {
     if (countNum === 0) {
